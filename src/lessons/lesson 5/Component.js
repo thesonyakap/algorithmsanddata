@@ -49,7 +49,6 @@ rl.on('line', line => {
     }
   }
 
-  // Вывод
   console.log(components.length);
   for (const comp of components) {
     console.log(comp.length);
