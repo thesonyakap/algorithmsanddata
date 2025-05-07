@@ -26,7 +26,6 @@ rl.on('line', line => {
           parent[u] = v;
           if (dfs(u, v)) return true;
         } else if (u !== p) {
-          // Найден цикл
           let cur = v;
           const temp = [u + 1];
           while (cur !== u) {
