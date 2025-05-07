@@ -18,7 +18,6 @@ rl.on('line', line => {
   let area = 0;
 
   function dfs(row, col) {
-    // Проверка границ и условий
     if (
       row < 0 || row >= n ||
       col < 0 || col >= n ||
@@ -31,16 +30,13 @@ rl.on('line', line => {
     visited[row][col] = true;
     area++;
 
-    // Рекурсивно идём во все 4 стороны
-    dfs(row - 1, col); // вверх
-    dfs(row + 1, col); // вниз
-    dfs(row, col - 1); // влево
-    dfs(row, col + 1); // вправо
+    dfs(row - 1, col); 
+    dfs(row + 1, col); 
+    dfs(row, col - 1); 
+    dfs(row, col + 1); 
   }
 
-  // Запускаем DFS от стартовой клетки (приводим к индексам с 0)
   dfs(startRow - 1, startCol - 1);
 
-  // Выводим площадь комнаты в консоль
   console.log(area);
 });
